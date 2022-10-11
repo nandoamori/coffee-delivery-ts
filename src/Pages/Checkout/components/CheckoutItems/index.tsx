@@ -53,15 +53,15 @@ export function CheckoutItems() {
         </AddressData>
         <p>O pagamento é feito na entrega. Escolha a forma que deseja pagar</p>
         <CardPayment>
-          <Card>
+          <Card type="submit">
             <CreditCard />
             <p>CARTÃO DE CRÉDITO</p>
           </Card>
-          <Card>
+          <Card type="submit">
             <Bank />
             <p>CARTÃO DE DÉBITO</p>
           </Card>
-          <Card>
+          <Card type="submit">
             <Money />
             <p>DINHEIRO</p>
           </Card>

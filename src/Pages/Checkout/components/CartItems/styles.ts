@@ -1,21 +1,14 @@
 import styled from 'styled-components'
-
-export const CheckRequest = styled.aside`
-  width: 45%;
-`
-
-export const RequestItems = styled.div`
-  background: ${(props) => props.theme['gray-100']};
-  border-radius: 6px 44px;
-  padding: 2.5rem;
-  margin-top: 1.5rem;
-`
-
 export const SelectedCoffee = styled.div`
   display: flex;
   padding: 1.5rem 0;
   justify-content: space-between;
   gap: 1.25rem;
+
+  strong {
+    display: flex;
+    gap: 0.25rem;
+  }
 `
 
 export const QuantityItems = styled.div`
@@ -48,6 +41,8 @@ export const ButtonDelete = styled.button`
 
 export const CheckQuantity = styled.div`
   display: flex;
+  justify-content: center;
+  align-items: center;
 `
 
 export const TotalItems = styled.div`
@@ -60,11 +55,6 @@ export const TotalItems = styled.div`
 export const TotalPrice = styled.div`
   display: flex;
   justify-content: space-between;
-
-  strong {
-    display: flex;
-    gap: 0.25rem;
-  }
 `
 
 export const ButtonConfirm = styled.button`

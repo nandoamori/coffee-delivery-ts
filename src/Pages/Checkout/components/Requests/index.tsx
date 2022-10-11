@@ -1,9 +1,6 @@
-import { Minus, Plus, Trash } from 'phosphor-react'
-import {
-  CounterToCart,
-  ButtonAddToCart,
-  ButtonRemoveToCart,
-} from '../../../Home/components/styles'
+import { useShopCart } from '../../../../contexts/ShopCartContext'
+import { CartItem } from '../CartItems/CartItem'
+import coffees from '../../../../data/coffees.json'
 
 import {
   CheckRequest,
@@ -11,43 +8,30 @@ import {
   TotalItems,
   TotalPrice,
   RequestItems,
-  SelectedCoffee,
-  QuantityItems,
-  ButtonDelete,
-  CheckQuantity,
 } from './styles'
 
 export function Requests() {
+  const { cartItems } = useShopCart()
   return (
     <CheckRequest>
       <h2>Cafés selecionados</h2>
       <RequestItems>
-        <hr />
-        <SelectedCoffee>
-          <img src="./src/assets/expresso-cremoso.png" alt="" />
-          <QuantityItems>
-            <p>Expresso tradicional</p>
-            <CheckQuantity>
-              <ButtonRemoveToCart type="button">
-                <Minus />
-              </ButtonRemoveToCart>
-              <CounterToCart type="text" />
-              <ButtonAddToCart type="button">
-                <Plus />
-              </ButtonAddToCart>
-              <ButtonDelete>
-                <Trash />
-                REMOVER
-              </ButtonDelete>
-            </CheckQuantity>
-          </QuantityItems>
-          <strong>R$ 9,90</strong>
-        </SelectedCoffee>
+        {cartItems.map((item) => (
+          <CartItem key={item.id} {...item} />
+        ))}
         <hr />
         <TotalItems>
           <TotalPrice>
             <p>Total de itens</p>
-            <p>R$ 29,70</p>
+            <strong>
+              <span>R$</span>
+              {cartItems
+                .reduce((total, cartItem) => {
+                  const item = coffees.find((i) => i.id === cartItem.id)
+                  return total + (item?.price || 0) * cartItem.quantity
+                }, 0)
+                .toFixed(2)}
+            </strong>
           </TotalPrice>
           <TotalPrice>
             <small>Entrega</small>
@@ -55,7 +39,15 @@ export function Requests() {
           </TotalPrice>
           <TotalPrice>
             <strong>Total</strong>
-            <strong>R$ 33,20</strong>
+            <strong>
+              <span>R$</span>
+              {cartItems
+                .reduce((total, cartItem) => {
+                  const item = coffees.find((i) => i.id === cartItem.id)
+                  return total + (item?.price || 0) * cartItem.quantity
+                }, 3.5)
+                .toFixed(2)}
+            </strong>
           </TotalPrice>
         </TotalItems>
 

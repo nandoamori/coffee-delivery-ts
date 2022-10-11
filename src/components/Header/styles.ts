@@ -5,6 +5,7 @@ export const HeaderContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 2rem 0;
+  position: relative;
 
   nav {
     display: flex;
@@ -28,6 +29,18 @@ export const HeaderContainer = styled.div`
       background: ${(props) => props.theme['yellow-100']};
       border-radius: 6px;
       padding: 0.4rem;
+    }
+
+    span {
+      text-align: center;
+      background: ${(props) => props.theme['purple-400']};
+      border-radius: 50%;
+      padding: 0.2rem 0.5rem;
+      position: absolute;
+      right: -0.5rem;
+      top: 1rem;
+      transform: 'translate(25%, 25%)';
+      color: ${(props) => props.theme['gray-100']};
     }
   }
 `

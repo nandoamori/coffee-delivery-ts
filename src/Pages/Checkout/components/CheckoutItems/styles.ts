@@ -48,7 +48,7 @@ export const Card = styled.button`
     background: ${(props) => props.theme['gray-400']};
   }
 
-  &:active {
+  &:checked {
     outline: 0;
     box-shadow: 0 0 0 1px ${(props) => props.theme['purple-300']};
   }

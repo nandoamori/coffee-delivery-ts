@@ -126,8 +126,8 @@ export const ButtonRemoveToCart = styled.button`
   color: ${(props) => props.theme['purple-300']};
 `
 
-export const CounterToCart = styled.input`
-  width: 1rem;
+export const CounterToCart = styled.div`
+  width: 2rem;
   color: ${(props) => props.theme['gray-800']};
   text-align: center;
   background: transparent;
