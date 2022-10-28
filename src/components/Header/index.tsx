@@ -7,7 +7,7 @@ import { useShopCart } from '../../contexts/ShopCartContext'
 export function Header() {
   const { cartQuantity } = useShopCart()
   return (
-    <HeaderContainer>
+    <HeaderContainer className="container">
       <NavLink to="/" title="Home">
         <img src={logo} alt="" />
       </NavLink>

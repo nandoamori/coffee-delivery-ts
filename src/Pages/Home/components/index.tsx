@@ -41,7 +41,7 @@ export function CoffeeList({
   } = useShopCart()
 
   return (
-    <CoffeeContainer>
+    <CoffeeContainer className="container">
       <CoffeeAll>
         {coffees.map((item) => {
           return (

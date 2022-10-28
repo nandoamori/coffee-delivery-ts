@@ -12,10 +12,6 @@ export const CoffeeContainer = styled.section`
     text-align: flex-start;
   }
 `
-export const Loading = styled.h1`
-  color: ${(props) => props.theme['gray-600']};
-  font-size: 1rem;
-`
 
 export const CoffeeAll = styled.section`
   display: flex;

@@ -24,4 +24,14 @@ export const GlobalStyle = createGlobalStyle`
         border-radius: 6px;
         border: none;
     }
+
+    input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
 `

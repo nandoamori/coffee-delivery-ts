@@ -50,8 +50,7 @@ export function Requests() {
             </strong>
           </TotalPrice>
         </TotalItems>
-
-        <ButtonConfirm type="button">CONFIRMAR PEDIDO</ButtonConfirm>
+        <ButtonConfirm type="submit">CONFIRMAR PEDIDO</ButtonConfirm>
       </RequestItems>
     </CheckRequest>
   )

@@ -13,8 +13,9 @@ export const BannerContainer = styled.article`
     color: ${(props) => props.theme['gray-800']};
   }
 
-  p {
+  h3 {
     font-size: 1.25rem;
+    font-weight: normal;
   }
 `
 
@@ -28,13 +29,9 @@ export const Description = styled.div`
 `
 
 export const Items = styled.div`
+  width: 100%;
   display: flex;
-  gap: 0.75rem;
   align-items: center;
-
-  svg {
-    background: ${(props) => props.theme['yellow-600']};
-    border-radius: 16px;
-    padding: 0.5rem;
-  }
+  justify-content: space-between;
+  gap: 3.5rem;
 `

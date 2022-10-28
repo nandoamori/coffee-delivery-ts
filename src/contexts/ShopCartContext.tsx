@@ -23,9 +23,10 @@ type ShopCartContextTypes = {
   removeFromCart: (id: number) => void
   cartQuantity: number
   cartItems: CartItem[]
+  clearCart: () => void
 }
 
-const ShopCartContext = createContext({} as ShopCartContextTypes)
+export const ShopCartContext = createContext({} as ShopCartContextTypes)
 
 export function useShopCart() {
   return useContext(ShopCartContext)
@@ -54,11 +55,10 @@ export function ShopCartProvider({ children }: ShopCartProviderProps) {
   function addToCart(id: number) {
     const itemInCart = cartItems.find((item) => item.id === id)
     if (!itemInCart) {
-      return [...cartItems, { id, quantity: 0 }]
+      return [...cartItems, { id, quantity: 1 }]
     } else {
-      itemInCart.quantity = itemInCart.quantity + 0
+      setCartItems(cartItems)
     }
-    setCartItems(cartItems)
   }
 
   function increaseCartQuantity(id: number) {
@@ -103,15 +103,18 @@ export function ShopCartProvider({ children }: ShopCartProviderProps) {
     localStorage.setItem(COFFEE_ITEMS_STORAGE_KEY, JSON.stringify(cartItems))
   }, [cartItems])
 
+  function clearCart() {
+    setCartItems([])
+  }
   return (
     <ShopCartContext.Provider
       value={{
+        clearCart,
         addToCart,
         getItemQuantity,
         increaseCartQuantity,
         decreaseCartQuantity,
         removeFromCart,
-
         cartItems,
         cartQuantity,
       }}

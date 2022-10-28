@@ -4,8 +4,12 @@ export const HeaderContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background: ${(props) => props.theme['white-background']};
   padding: 2rem 0;
-  position: relative;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 5;
 
   nav {
     display: flex;
