@@ -3,6 +3,7 @@ import { DefaultLayout } from './DefaultLayout'
 
 import { Checkout } from './Pages/Checkout'
 import { Home } from './Pages/Home'
+
 import { Success } from './Pages/OrderConfirmed'
 
 function Router() {

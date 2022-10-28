@@ -25,14 +25,7 @@ export interface CoffeeProps {
   price: number
 }
 
-export function CoffeeList({
-  id,
-  image,
-  label,
-  title,
-  description,
-  price,
-}: CoffeeProps) {
+export function CoffeeList() {
   const {
     addToCart,
     getItemQuantity,
