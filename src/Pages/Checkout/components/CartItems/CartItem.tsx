@@ -32,7 +32,7 @@ export function CartItem({ id, quantity }: CartItemProps) {
     <div>
       <hr />
       <SelectedCoffee key={item.id}>
-        <img src={item.image} alt="" />
+        <img src={`/coffees/${item.image}`} alt="" />
         <QuantityItems>
           <p>{item.title}</p>
           <CheckQuantity>
