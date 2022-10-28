@@ -39,7 +39,7 @@ export function CoffeeList() {
         {coffees.map((item) => {
           return (
             <CoffeeCard key={item.id}>
-              <img src={item.image} alt="" />
+              <img src={`../../public/coffees/${item.image}`} alt="" />
               <p>{item.label}</p>
               <h4>{item.title}</h4>
               <h5>{item.description}</h5>
