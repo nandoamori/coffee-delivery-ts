@@ -8,6 +8,7 @@ In this challenge, an application was developed from scratch, a delivery of coff
 * [React](https://reactjs.org/)
 * [Vite](https://vitejs.dev/)
 * [Figma](https://www.figma.com/)
+* [JSON Server](https://www.npmjs.com/package/json-server)
 * [Styled Components](https://styled-components.com/)
 * [Local Storage](https://developer.mozilla.org/pt-BR/docs/Web/API/Window/localStorage)
 * [Typescript](https://www.typescriptlang.org/)
